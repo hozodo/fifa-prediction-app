@@ -64,6 +64,7 @@ export const FINALIST_PLAYERS: FinalistPlayer[] = [
   { id: 'esp-rodri', name: 'Rodri', position: 'MID', team: 'ESP' },
   { id: 'esp-baena', name: 'Álex Baena', position: 'MID', team: 'ESP' },
   { id: 'esp-merino', name: 'Mikel Merino', position: 'MID', team: 'ESP' },
+  { id: 'esp-rodri', name: 'Rodrigo Hernández Cascante', position: 'MID', team: 'ESP' },
   { id: 'esp-oyarzabal', name: 'Mikel Oyarzabal', position: 'FWD', team: 'ESP' },
   { id: 'esp-olmo', name: 'Dani Olmo', position: 'FWD', team: 'ESP' },
   { id: 'esp-williams', name: 'Nico Williams', position: 'FWD', team: 'ESP' },
@@ -73,3 +74,4 @@ export const FINALIST_PLAYERS: FinalistPlayer[] = [
   { id: 'esp-munoz', name: 'Víctor Muñoz', position: 'FWD', team: 'ESP' },
   { id: 'esp-yamal', name: 'Lamine Yamal', position: 'FWD', team: 'ESP' },
 ];
+
