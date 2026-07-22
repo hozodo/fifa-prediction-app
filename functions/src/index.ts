@@ -22,6 +22,7 @@ interface Match {
     | 'Quarter-final'
     | 'Semi-final'
     | 'Play-off for third place'
+    | 'Bronze final'
     | 'Final';
 }
 
@@ -262,6 +263,10 @@ export const updatePredictionPoints = onValueWritten(
           break;
 
         case 'Play-off for third place':
+          multiplier = 5;
+          break;
+
+        case 'Bronze final':
           multiplier = 5;
           break;
 
