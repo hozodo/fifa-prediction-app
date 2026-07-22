@@ -476,30 +476,6 @@ export const updateMatchScoresWithoutPenalty = onSchedule(
   }
 );
 
-// function getFinalScores(item: FifaApiMatch) {
-//   const fifaHomeScore = item.Home?.Score ?? -1;
-//   const fifaAwayScore = item.Away?.Score ?? -1;
-
-//   let finalHomeScore = fifaHomeScore;
-//   let finalAwayScore = fifaAwayScore;
-
-//   if (
-//     typeof item.HomeTeamPenaltyScore === 'number' &&
-//     typeof item.AwayTeamPenaltyScore === 'number'
-//   ) {
-//     if (item.HomeTeamPenaltyScore > item.AwayTeamPenaltyScore) {
-//       finalHomeScore = fifaHomeScore + 1;
-//     } else if (item.AwayTeamPenaltyScore > item.HomeTeamPenaltyScore) {
-//       finalAwayScore = fifaAwayScore + 1;
-//     }
-//   }
-
-//   return {
-//     homeScore: finalHomeScore,
-//     awayScore: finalAwayScore,
-//   };
-// }
-
 function calculateFinalScore(item: FifaApiMatch) {
   const fifaHomeScore = item.Home?.Score ?? -1;
   const fifaAwayScore = item.Away?.Score ?? -1;
@@ -549,28 +525,3 @@ function transformMatches(results: FifaApiMatch[]) {
   });
   return matches;
 }
-
-// function transformMatchesWithoutPenalty(results: FifaApiMatch[]) {
-//   const matches: Record<string, any> = {};
-//   results.forEach((item, index) => {
-//     const game = index + 1;
-//     matches[game] = {
-//       game,
-//       fifaId: item.IdMatch,
-//       round: item.StageName?.[0]?.Description ?? '',
-//       group: item.GroupName?.[0]?.Description?.replace('Group ', '') ?? null,
-//       date: item.Date,
-//       timestamp: Math.floor(new Date(item.Date).getTime() / 1000),
-//       location: item.Stadium?.Name?.[0]?.Description ?? '',
-//       locationCity: item.Stadium?.CityName?.[0]?.Description ?? '',
-//       locationCountry: item.Stadium?.IdCountry ?? '',
-//       home: item.Home?.Abbreviation ?? item.PlaceHolderA,
-//       homeName: item.Home?.ShortClubName ?? item.PlaceHolderA,
-//       homeScore: item.Home?.Score ?? -1,
-//       away: item.Away?.Abbreviation ?? item.PlaceHolderB,
-//       awayName: item.Away?.ShortClubName ?? item.PlaceHolderB,
-//       awayScore: item.Away?.Score ?? -1,
-//     };
-//   });
-//   return matches;
-// }
